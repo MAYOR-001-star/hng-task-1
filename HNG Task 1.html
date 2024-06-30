@@ -6,68 +6,71 @@
   <title>My Tech Goals</title>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 1rem 0.5rem;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #dfb5b5;
-    }
+  font-family: Arial, sans-serif;
+  margin: 1rem 0.5rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0bfbf;
+}
 
-    .container {
-        max-width: 800px;
-        width: 100%;
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        text-align: center;
-    }
+.container {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
 
-    .profile img {
-        max-width: 150px;
-        border-radius: 50%;
-    }
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
-    .profile p, .time-info p, .goals ul {
-        margin: 10px 0;
-    }
+.profile p, .time-info p, .goals ul {
+  margin: 10px 0;
+}
 
-    .goals ul {
-        list-style-type: none;
-        padding: 0;
-    }
+.goals ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-    .goals li {
-        background-color: #e0e0e0;
-        margin: 5px 0;
-        padding: 10px;
-        border-radius: 4px;
-    }
+.goals li {
+  background-color: #e0e0e0;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
 
-    .links p {
-        margin: 10px 0;
-    }
+.links p {
+  margin: 10px 0;
+}
 
-    .links a {
-        color: #007bff;
-        text-decoration: none;
-    }
+.links a {
+  color: #007bff;
+  text-decoration: none;
+}
 
-    .links a:hover {
-        text-decoration: underline;
-    }
+.links a:hover {
+  text-decoration: underline;
+}
+
   </style>
 </head>
 <body>
   <div class="container">
     <h1>My Tech Goals for the Next 2 Years</h1>
     <div class="profile">
-      <img src="./images/profile-pic.jpg" alt="Slack Profile Picture" width="150" height="150" data-testid="slackProfilePicture">
+      <img src="./images/profile-pic.jpg" alt="Slack Profile Picture" width="1080" height="1046" data-testid="slackProfilePicture" class="profile-picture">
       <p>Slack Name: <span data-testid="slackDisplayName">@Mayor.la.la</span></p>
-      <p>Slack Email: <span data-testid="slackEmail">mayorkunabdulazeez01@gmail.com</span></p>
+      <p>Slack Email: <span data-testid="slackEmail">mayorkunabdulazeez01@gmail.com.com</span></p>
     </div>
     <div class="time-info">
       <p>Current Time (UTC): <span data-testid="currentTimeUTC"></span></p>
@@ -91,13 +94,14 @@
   </div>
   <script>
     function updateTimeAndDay() {
-        const currentTimeUTC = new Date().toUTCString();
-        const currentDay = new Date().toLocaleString('en-US', { weekday: 'long' });
+      const currentTimeUTC = new Date().toUTCString();
+      const currentDay = new Date().toLocaleString('en-US', { weekday: 'long' });
 
-        document.querySelector('[data-testid="currentTimeUTC"]').textContent = currentTimeUTC;
-        document.querySelector('[data-testid="currentDay"]').textContent = currentDay;
+      document.querySelector('[data-testid="currentTimeUTC"]').textContent = currentTimeUTC;
+      document.querySelector('[data-testid="currentDay"]').textContent = currentDay;
     }
 
+    // Update time and day immediately and every minute
     updateTimeAndDay();
     setInterval(updateTimeAndDay, 60000);
   </script>
